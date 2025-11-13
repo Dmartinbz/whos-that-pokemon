@@ -2,7 +2,7 @@
   <app-header [showQuit]="true" [quitLabel]="'quit'" (quit)="onQuitFromGame()"></app-header>
 
   <div class="content">
-    <img src="Pokemon_logo.png" alt="Pokemon Logo" class="pokemon-logo" />
+    <img src="/whos-that-pokemon/Pokemon_logo.png" alt="Pokemon Logo" class="pokemon-logo" />
     <h1 class="game-title">Who's that Pokemon?</h1>
 
     @if (isLoading()) {
@@ -72,7 +72,7 @@
         (click)="onCaughtPokemonClick()"
         [disabled]="showCatchAnimation()"
       >
-        <img src="PokeBall_icon.png" alt="Caught Pokemon" class="button-icon" />
+        <img src="/whos-that-pokemon/PokeBall_icon.png" alt="Caught Pokemon" class="button-icon" />
         <span>Caught ({{ caughtPokemonList().length }})</span>
       </button>
     </div>
