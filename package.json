@@ -5,6 +5,8 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --configuration=production --output-path docs --base-href /whos-that-pokemon/ && npm run fix-font-path",
+    "fix-font-path": "find docs/browser -name 'styles-*.css' -exec sed -i '' 's|url(/pokemon\\.ttf)|url(/whos-that-pokemon/pokemon.ttf)|g' {} \\;",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
