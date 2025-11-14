@@ -9,7 +9,11 @@ const difficultyModifiers: Record<
   world: { rewardMultiplier: 1.8, penaltyMultiplier: 2.2 },
 };
 
-export function calculateScore(timeTaken: number, hintsUsed: number, difficulty: Difficulty): number {
+export function calculateScore(
+  timeTaken: number,
+  hintsUsed: number,
+  difficulty: Difficulty
+): number {
   let timeBonus = 10;
   if (timeTaken <= 5) timeBonus = 50;
   else if (timeTaken <= 10) timeBonus = 40;
@@ -38,4 +42,3 @@ export function calculateTryPenalty(tryNumber: number, difficulty: Difficulty): 
   const { penaltyMultiplier } = difficultyModifiers[difficulty];
   return tryNumber * tryPenaltyStep * penaltyMultiplier;
 }
-

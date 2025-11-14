@@ -9,6 +9,9 @@ import {
   Difficulty,
 } from '../../utils/game-type';
 
+function round2(value: number): number {
+  return Math.round(value * 100) / 100;
+}
 export interface GameState {
   currentScore: number;
   currentTries: number;
@@ -89,8 +92,7 @@ export const gameReducer = createReducer(
       return { ...state, players: storedState.players };
     }
 
-    const playerData =
-      storedState.players[storedPlayerName] ?? createEmptyPlayerData();
+    const playerData = storedState.players[storedPlayerName] ?? createEmptyPlayerData();
 
     return {
       ...state,
@@ -108,11 +110,11 @@ export const gameReducer = createReducer(
   }),
   on(GameActions.addScore, (state, { points }) => ({
     ...state,
-    currentScore: points > 0 ? state.currentScore + points : state.currentScore,
+    currentScore: points > 0 ? round2(state.currentScore + points) : state.currentScore,
   })),
   on(GameActions.deductScore, (state, { amount }) => ({
     ...state,
-    currentScore: Math.max(0, state.currentScore - amount),
+    currentScore: Math.max(0, round2(state.currentScore - amount)),
   })),
   on(GameActions.resetScore, (state) => ({
     ...state,
@@ -262,4 +264,3 @@ export const gameReducer = createReducer(
     isLoadingPokemon: isLoading,
   }))
 );
-

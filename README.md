@@ -57,14 +57,3 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-## Wireframe
-
-https://www.figma.com/design/fLqKZxTh6ywfvKpmZPVIUL/whos-that-pokemon?node-id=0-1&p=f&t=wzqEGmBFpnYGvdsB-0
-
-## How to Run
-
-1. Clone the repository.
-2. Change to main directory and install dependencies with `npm install`
-3. Run the project by running `npm run serve`
-4. Navigate to `http://localhost:4200/`
