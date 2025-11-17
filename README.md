@@ -1,59 +1,85 @@
-# PokemonQuiz
+# Who's That Pokémon?
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.9.
+An interactive Pokémon guessing game built with Angular and NgRx. Test your knowledge of Pokémon by identifying them from silhouettes, with hints available if you get stuck.
 
-## Development server
+**[Play the Game](https://minh-t-coding.github.io/WhosThatPokemon/)**
 
-To start a local development server, run:
+## Installation
 
+### Prerequisites
+- Node.js (v18+)
+- npm (v10+)
+
+### Local Setup
+
+1. **Clone the repository:**
 ```bash
-ng serve
+git clone https://github.com/minh-t-coding/WhosThatPokemon.git
+cd WhosThatPokemon
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+2. **Install dependencies:**
 ```bash
-ng generate component component-name
+npm install
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
+3. **Start the development server:**
 ```bash
-ng generate --help
+npm run serve
 ```
 
-## Building
+Navigate to `http://localhost:4200/` in your browser.
 
-To build the project run:
+## How to Play
 
-```bash
-ng build
-```
+1. **Select Difficulty**: Choose from Kanto, Johto, or World Tour
+2. **Enter Your Name**: Your score will be saved under this name
+3. **Guess the Pokémon**: Type the Pokémon's name in the input field
+4. **Use Hints**: Click the Hint button to unlock progressive hints
+5. **Scan or Skip**: 
+   - **Scan**: Submit your guess
+   - **Skip**: Move to the next Pokémon (limited to 5 skips)
+6. **View Collection**: Check your caught Pokémon anytime during gameplay
+7. **Game Over**: When you reach 3 wrong guesses or use all 5 skips, the game ends
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Scoring System
 
-## Running unit tests
+Points are calculated based on:
+- **Time Taken**: Faster guesses earn more points
+  - ≤5 seconds: +50 bonus
+  - ≤10 seconds: +40 bonus
+  - ≤20 seconds: +30 bonus
+  - ≤30 seconds: +20 bonus
+  - \>30 seconds: +10 bonus
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+- **Base Score**: 100 points
+- **Difficulty Multiplier**:
+  - Kanto: 1x
+  - Johto: 1.4x
+  - World: 1.8x
 
-```bash
-ng test
-```
+## API Integration
 
-## Running end-to-end tests
+Data is fetched from the **PokéAPI v2**:
+- Pokemon information (sprites, types, cries)
+- Supports up to 1,025 Pokémon
 
-For end-to-end (e2e) testing, run:
+## Browser Storage
 
-```bash
-ng e2e
-```
+The app uses browser localStorage to persist:
+- **Game State**: Player scores, caught Pokémon, attempts
+- **Leaderboard**: Top scores for all players
+- **Settings**: Volume preferences
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Deployment
 
-## Additional Resources
+Deployed on GitHub Pages at: https://minh-t-coding.github.io/WhosThatPokemon/
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Contributors
+
+- **Minh Nguyen**
+- **Devan Martinez**
+
+## License
+
+This project is open source and available under the ISC License.
