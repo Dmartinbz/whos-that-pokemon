@@ -73,7 +73,7 @@ The app uses browser localStorage to persist:
 
 ## Deployment
 
-Deployed on GitHub Pages at: https://minh-t-coding.github.io/WhosThatPokemon/
+Deployed on GitHub Pages at: https://dmartinbz.github.io/whos-that-pokemon/
 
 ## Contributors
 
