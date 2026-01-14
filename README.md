@@ -2,7 +2,7 @@
 
 An interactive Pokémon guessing game built with Angular and NgRx. Test your knowledge of Pokémon by identifying them from silhouettes, with hints available if you get stuck.
 
-**[Play the Game](https://minh-t-coding.github.io/WhosThatPokemon/)**
+**[Play the Game](https://dmartinbz.github.io/whos-that-pokemon/)**
 
 ## Installation
 
